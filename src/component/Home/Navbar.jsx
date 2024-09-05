@@ -19,7 +19,7 @@ const Navbar = () => {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="/vite.svg" className="h-8" alt="Flowbite Logo" />
+          <img src="/vite.svg" className="h-6" alt="Flowbite Logo" />
           <span className="self-center text-2xl font-bold whitespace-nowrap">
             Furni<span className="text-blue-400">Flex</span>
           </span>
@@ -36,7 +36,7 @@ const Navbar = () => {
               <img
                 src={user?.photoURL || "/vite.svg"}
                 alt=""
-                className="w-10 h-10 rounded-full"
+                className="w-6 h-6 rounded-full"
               />
             </div>
           </div>
