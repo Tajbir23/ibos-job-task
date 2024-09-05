@@ -32,10 +32,12 @@ const AuthProvider = ({children}) => {
         signInWithPopup(auth, provider)
         .then((result) => {
             const user = result.user;
-            setUser(user);
-            console.log(user);
-            setLoading(false)
-            return user
+            if(user){
+                setUser(user);
+                console.log(user);
+                setLoading(false)
+                return user
+            }
         })
         .catch((error) => {
             setLoading(false)

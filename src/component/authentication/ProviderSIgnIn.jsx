@@ -12,6 +12,7 @@ const ProviderSIgnIn = () => {
     const handleGoolge = async(e) => {
         e.preventDefault()
         const user = await signInWithGoogle()
+        console.log('user', user)
         if(user){
             navigate('/')
         }
@@ -20,9 +21,7 @@ const ProviderSIgnIn = () => {
     const handleApple = async(e) => {
         e.preventDefault()
         const user = await signInWithApple()
-        if(user){
-            navigate('/')
-        }
+        navigate('/')
     }
   return (
     <div className="mt-5 flex gap-5">
