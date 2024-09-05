@@ -3,7 +3,7 @@
 
 const SideImage = () => {
   return (
-    <div className="bg-[url('/authentication/background.svg')] bg-no-repeat bg-cover h-screen w-1/2 flex items-center justify-center">
+    <div className="bg-[url('/authentication/background.svg')] bg-no-repeat bg-cover h-screen w-1/2 lg:flex items-center justify-center hidden">
         <div className="flex-col items-center justify-center gap-3">
             <img src="/vite.svg" alt="logo" className="m-auto" />
             <div className="text-center">

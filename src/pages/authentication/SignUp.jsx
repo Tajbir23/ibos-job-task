@@ -1,16 +1,44 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SideImage from "../../component/authentication/SideImage";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-import { FcGoogle } from "react-icons/fc";
-import { FaApple } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import ProviderSIgnIn from "../../component/authentication/providerSIgnIn";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
   const [isHide, setIsHide] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
+  const {createUserWithEmail, updateUserProfile} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const form = e.target;
+    const firstName = form.first_name.value;
+    const lastName = form.last_name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const name = `${firstName} ${lastName}`;
+
+    createUserWithEmail(email, password)
+    .then((result) => {
+      const user = result.user;
+      if(user){
+        updateUserProfile(name)
+        .then(() => {
+          navigate('/')
+        })
+      }
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+    
+    console.log(name, email, password);
+  };
   return (
-    <div className="flex">
-      <div className="w-1/2 flex items-center justify-center">
+    <div className="flex min-h-screen">
+      <div className="lg:w-2/3 w-full flex items-center justify-center">
         <div className="bg-[#FAFAFA] rounded-sm p-5">
           <div className="text-center">
             <h2 className="text-2xl font-semibold">Welcome To</h2>
@@ -21,7 +49,7 @@ const SignUp = () => {
           </div>
           {/* signup form start */}
           <div className="mt-5 flex flex-col gap-5">
-            <form className="flex flex-col gap-5">
+            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-5">
               <div className="flex items-center gap-5">
                 <div className="relative">
@@ -104,17 +132,7 @@ const SignUp = () => {
             </div>
           </div>
 
-          <div className="mt-5 flex gap-5">
-            <div className="h-14 w-full font-medium text-[12px] border-2 rounded-md cursor-pointer flex items-center justify-center gap-2">
-              <FcGoogle className="h-6 w-6" />
-              <h1>Sign in with Google</h1>
-            </div>
-
-            <div className="h-14 w-full font-medium text-[12px] border-2 rounded-md cursor-pointer flex items-center justify-center gap-2">
-              <FaApple className="h-6 w-6" />
-              <h1>Sign in with Apple</h1>
-            </div>
-          </div>
+          <ProviderSIgnIn />
           <p className="text-center font-medium mt-5">Have an account? <Link to="/login" className="text-blue-700">Sign In</Link></p>
         </div>
       </div>
