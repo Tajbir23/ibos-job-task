@@ -20,19 +20,12 @@ const SignUp = () => {
     const password = form.password.value;
     const name = `${firstName} ${lastName}`;
 
-    createUserWithEmail(email, password)
-    .then((result) => {
-      const user = result.user;
-      if(user){
-        updateUserProfile(name)
-        .then(() => {
-          navigate('/')
-        })
-      }
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    const user = await createUserWithEmail(email, password)
+    
+    if(user){
+      await updateUserProfile(name)
+      navigate('/products')
+    }
     
     console.log(name, email, password);
   };

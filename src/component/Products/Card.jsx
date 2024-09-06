@@ -1,8 +1,22 @@
 /* eslint-disable react/prop-types */
 
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
+
 const Card = ({ product }) => {
-    const discount = Math.floor(product?.price * product?.discountPercentage);
-  
+    const {cartData, setCartData} = useContext(AuthContext)
+    const discount = Math.floor((product?.price * product?.discountPercentage) / 100);
+  console.log("cart data",cartData)
+
+  const addToCart = (e) => {
+    e.preventDefault();
+    setCartData((prevCartData) => [
+        ...prevCartData,
+        product
+    ]);
+    toast.success(`${product?.title} added to cart`)
+};
     return (
       <div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md overflow-hidden flex flex-col">
         <img 
@@ -20,7 +34,7 @@ const Card = ({ product }) => {
           <p className="text-sm text-gray-600 mb-4 flex-grow">
             {product?.description}
           </p>
-          <button 
+          <button  onClick={addToCart}
             className="w-full bg-black text-white font-medium py-2 px-4 rounded hover:bg-gray-800 transition-colors mt-auto"
           >
             Add to cart

@@ -9,6 +9,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+    const [cartData, setCartData] = useState([]);
 
     const createUserWithEmail = (email, password) => {
         setLoading(true);
@@ -22,9 +23,10 @@ const AuthProvider = ({children}) => {
 
     const updateUserProfile = (name) => {
         setLoading(true)
-        updateProfile(auth.currentUser, {
+        const data = updateProfile(auth.currentUser, {
             displayName: name
         })
+        return data
     }
 
     const signInWithGoogle = () => {
@@ -92,7 +94,9 @@ const AuthProvider = ({children}) => {
         updateUserProfile,
         logOut,
         signInWithGoogle,
-        signInWithApple
+        signInWithApple,
+        cartData,
+        setCartData,
     }
   return (
     <AuthContext.Provider value={authInfo}>

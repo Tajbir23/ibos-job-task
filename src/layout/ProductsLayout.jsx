@@ -3,9 +3,9 @@ import Category from "../pages/Products/Category";
 
 const ProductsLayout = () => {
   return (
-    <div className="flex py-10">
+    <div className="grid grid-cols-5">
       <Category />
-      <div className="flex-1 mt-4">
+      <div className="flex-1 mt-4 col-span-4">
         <Outlet />
       </div>
     </div>

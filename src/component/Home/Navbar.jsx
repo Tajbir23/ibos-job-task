@@ -5,8 +5,9 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, cartData } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage the toggle
+  const cartDataLength = cartData.length || 0;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle the menu state
@@ -26,12 +27,12 @@ const Navbar = () => {
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="flex items-center gap-5">
-            <div className="relative">
+            <Link to="/products/cart" className="relative cursor-pointer">
               <CiShoppingCart className="text-4xl" />
               <span className="absolute top-4 right-0 rounded-full p-1 w-4 h-4 flex items-center justify-center bg-black text-white text-sm font-medium ">
-                1
+                {cartDataLength}
               </span>
-            </div>
+            </Link>
             <div>
               <img
                 src={user?.photoURL || "/vite.svg"}

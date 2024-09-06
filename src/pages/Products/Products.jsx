@@ -24,7 +24,7 @@ const Products = () => {
         return <Card key={product?.id} product={product} />
       })}
     </div>
-    <div>
+    <div className="mt-10">
       <Pagination />
     </div>
     </div>
