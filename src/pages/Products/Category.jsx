@@ -12,15 +12,13 @@ const Category = () => {
         .catch(error => console.log(error))
     },[])
   return (
-    <div className="border-r pr-5 py-2 mr-5">
+    <ul className="border-r pr-5 py-2 mr-5">
       {categories?.map((category) => {
-        return <ul key={category?.slug}>
-          <li className="my-1 py-2">
+        return <li key={category?.slug} className="my-1 py-2">
             <NavLink to={`products/category/${category?.slug}`}>{category?.name}</NavLink>
-          </li>
-        </ul>
+        </li>
       })}
-    </div>
+    </ul>
   )
 }
 

@@ -18,7 +18,7 @@ const Card = ({ product }) => {
             <span className="text-red-500 font-semibold">{product?.discountPercentage}% OFF</span>
           </div>
           <p className="text-sm text-gray-600 mb-4 flex-grow">
-            It has a backrest that can be tilted back, and often a footrest extended.
+            {product?.description}
           </p>
           <button 
             className="w-full bg-black text-white font-medium py-2 px-4 rounded hover:bg-gray-800 transition-colors mt-auto"
