@@ -5,17 +5,17 @@ import { SlSocialFacebook } from "react-icons/sl";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-300 p-10">
-      <div className=" flex  justify-between gap-8 text-center md:text-left">
+    <footer className="bg-black text-gray-300 p-6 md:p-10">
+      <div className="flex flex-col md:flex-row justify-between gap-8 text-center md:text-left">
         {/* Logo Section */}
-        <div className="flex gap-2 justify-center">
+        <div className="flex gap-2 justify-center md:justify-start mb-6 md:mb-0">
           <img src="/vite.svg" alt="FurniFlex Logo" className="w-6 h-6" />
           <h2 className="text-xl font-bold">Furni<span className="text-blue-500">Flex</span></h2>
         </div>
 
         {/* About Us Links */}
         <div>
-          <h3 className="text-[18px] font-semibold text-white mb-3">About US</h3>
+          <h3 className="text-[18px] font-semibold text-white mb-3">About Us</h3>
           <ul className="space-y-2">
             <li><a href="/" className="text-[18px] text-[#81859F] ">Master Plan</a></li>
             <li><a href="/" className="text-[18px] text-[#81859F] ">Jobs</a></li>
@@ -49,9 +49,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className=" mt-28 mx-auto px-4 border-t border-gray-600 pt-6 flex flex-col md:flex-row items-center justify-between">
+      <div className="mt-16 md:mt-28 mx-auto px-4 border-t border-gray-600 pt-6 flex flex-col md:flex-row items-center justify-between">
         {/* Social Media */}
-        <div className="flex space-x-4 mb-4 md:mb-0 ">
+        <div className="flex space-x-4 mb-4 md:mb-0 justify-center md:justify-start">
           <a href="/" className="text-[#81859F]"><SlSocialFacebook className="text-white" /></a>
           <a href="/" className="text-[#81859F]"><IoLogoInstagram className="text-white" /></a>
           <a href="/" className="text-[#81859F]"><RiTwitterXFill className="text-white" /></a>
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
 
         {/* Legal Links */}
-        <div className="space-x-6 text-sm">
+        <div className="space-x-6 text-sm text-center md:text-left mb-4 md:mb-0">
           <a href="/" className="text-[#81859F]">March22 Recap</a>
           <a href="/" className="text-[#81859F]">Privacy Policy</a>
           <a href="/" className="text-[#81859F]">General Terms</a>
@@ -68,7 +68,7 @@ const Footer = () => {
 
         {/* Language Selector */}
         <div className="flex items-center justify-center space-x-2 mt-4 md:mt-0">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="us flag" className="w-[18px] m-auto" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="us flag" className="w-[18px]" />
           <p className="text-gray-400">United States (English)</p>
         </div>
       </div>

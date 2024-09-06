@@ -7,7 +7,7 @@ const NavigationLink = () => {
             <li>
               <NavLink
                 to="/"
-                className="block py-2 px-3 rounded md:bg-transparent md:p-0"
+                className="block text-[18px] font-medium py-2 px-3 rounded md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Home
@@ -16,7 +16,7 @@ const NavigationLink = () => {
             <li>
               <NavLink
                 to="/products"
-                className="block py-2 px-3 rounded md:bg-transparent md:p-0"
+                className="block text-[18px] font-medium py-2 px-3 rounded md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Products
@@ -25,7 +25,7 @@ const NavigationLink = () => {
             <li>
               <NavLink
                 to="/categories"
-                className="block py-2 px-3 rounded md:bg-transparent md:p-0"
+                className="block text-[18px] font-medium py-2 px-3 rounded md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Categories
@@ -34,7 +34,7 @@ const NavigationLink = () => {
             <li>
               <NavLink
                 to="/custom"
-                className="block py-2 px-3 rounded md:bg-transparent md:p-0"
+                className="block text-[18px] font-medium py-2 px-3 rounded md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Custom
@@ -43,7 +43,7 @@ const NavigationLink = () => {
             <li>
               <NavLink
                 to="/blog"
-                className="block py-2 px-3 rounded md:bg-transparent md:p-0"
+                className="block text-[18px] font-medium py-2 px-3 rounded md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Blog

@@ -3,6 +3,8 @@ import SignUp from "../pages/authentication/SignUp";
 import Login from "../pages/authentication/Login";
 import Layout from "../layout/Layout";
 import ProductsLayout from "../layout/ProductsLayout";
+import Order from "../pages/Order/Order";
+import CategoryProducts from "../pages/Products/CategoryProducts";
 import Products from "../pages/Products/Products";
 
 const router = createBrowserRouter([
@@ -23,10 +25,18 @@ const router = createBrowserRouter([
                 element: <ProductsLayout />,
                 children: [
                     {
-                        path: "products/category/:category",
+                        path: "",
                         element: <Products />
+                    },
+                    {
+                        path: "category/:category",
+                        element: <CategoryProducts />
                     }
                 ]
+            },
+            {
+                path: "cart",
+                element: <Order />
             }
         ]
     }

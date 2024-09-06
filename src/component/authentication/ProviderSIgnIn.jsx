@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 
 
 const ProviderSIgnIn = () => {
-    const {signInWithGoogle, signInWithApple} = useContext(AuthContext)
+    const {signInWithGoogle, signInWithApple, setUser} = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleGoolge = async(e) => {
@@ -14,14 +14,15 @@ const ProviderSIgnIn = () => {
         const user = await signInWithGoogle()
         console.log('user', user)
         if(user){
-            navigate('/')
+          setUser(user?.user)
+            navigate('/products')
         }
     }
 
     const handleApple = async(e) => {
         e.preventDefault()
         const user = await signInWithApple()
-        navigate('/')
+        navigate('/products')
     }
   return (
     <div className="mt-5 flex gap-5">

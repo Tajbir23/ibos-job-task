@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 
 const Card = ({ product }) => {
     const {cartData, setCartData} = useContext(AuthContext)
-    const discount = Math.floor((product?.price * product?.discountPercentage) / 100);
+    const discount = Math.ceil(product?.price / (1 - (product?.discountPercentage / 100)));
   console.log("cart data",cartData)
 
   const addToCart = (e) => {

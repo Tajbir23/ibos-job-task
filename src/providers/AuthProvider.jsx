@@ -31,35 +31,35 @@ const AuthProvider = ({children}) => {
 
     const signInWithGoogle = () => {
         const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-        .then((result) => {
-            const user = result.user;
-            if(user){
-                setUser(user);
-                console.log(user);
-                setLoading(false)
-                return user
-            }
-        })
-        .catch((error) => {
-            setLoading(false)
-            console.log(error);
-        })
+        return signInWithPopup(auth, provider)
+        // .then((result) => {
+        //     const user = result.user;
+        //     if(user){
+        //         setUser(user);
+        //         console.log(user);
+        //         setLoading(false)
+        //         return user
+        //     }
+        // })
+        // .catch((error) => {
+        //     setLoading(false)
+        //     console.log(error);
+        // })
     }
 
     const signInWithApple = () => {
         const provider = new OAuthProvider('apple.com')
-        signInWithPopup(auth, provider)
-        .then((result) => {
-            const user = result.user;
-            setUser(user);
-            console.log(user)
-            setLoading(false)
-            return user
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+        return signInWithPopup(auth, provider)
+        // .then((result) => {
+        //     const user = result.user;
+        //     setUser(user);
+        //     console.log(user)
+        //     setLoading(false)
+        //     return user
+        // })
+        // .catch((error) => {
+        //     console.log(error);
+        // })
     }
 
 

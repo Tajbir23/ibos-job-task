@@ -15,7 +15,7 @@ const Category = () => {
     <ul className="border-r pr-5 py-2 mr-5">
       {categories?.map((category) => {
         return <li key={category?.slug} className="my-1 py-2">
-            <NavLink to={`products/category/${category?.slug}`}>{category?.name}</NavLink>
+            <NavLink to={`category/${category?.slug}`} className="text-[22px] font-semibold w-full px-[10px] py-[8px]">{category?.name}</NavLink>
         </li>
       })}
     </ul>
