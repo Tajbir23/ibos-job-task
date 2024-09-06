@@ -5,8 +5,8 @@ import { SlSocialFacebook } from "react-icons/sl";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-300 py-28">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+    <footer className="bg-black text-gray-300 p-10">
+      <div className=" flex  justify-between gap-8 text-center md:text-left">
         {/* Logo Section */}
         <div className="flex gap-2 justify-center">
           <img src="/vite.svg" alt="FurniFlex Logo" className="w-6 h-6" />
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="container mt-28 mx-auto px-4 border-t border-gray-600 pt-6 flex flex-col md:flex-row items-center justify-between">
+      <div className=" mt-28 mx-auto px-4 border-t border-gray-600 pt-6 flex flex-col md:flex-row items-center justify-between">
         {/* Social Media */}
         <div className="flex space-x-4 mb-4 md:mb-0 ">
           <a href="/" className="text-[#81859F]"><SlSocialFacebook className="text-white" /></a>

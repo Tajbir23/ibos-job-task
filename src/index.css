@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 ul li a.active{
-  background-color: #F8F8F8;
+  background-color: black;
+  color: white;
   font-weight: 600 !important;
   border-radius: 5px;
   padding-top: 8px;
